@@ -1,0 +1,12 @@
+<div data-controller="booking-price" data-booking-price-valor-value="<%= @product.price%>">
+  <%= simple_form_for ([@product, @booking]) do |f| %>
+    <%= f.input :start_date, input_html: { data: {booking_price_target: "start"} }, html5: true%>
+    <%= f.input :end_date,input_html: { data: {booking_price_target: "end", action: "change->booking-price#calculate"}}, html5: true%>
+    <%= f.label "Days"%>
+    <p data-booking-price-target="days"></p>
+    <%= f.label "Booking price"%>
+    <p data-booking-price-target="price"></p>
+    <%= f.submit %>
+  <% end %>
+</div>
+

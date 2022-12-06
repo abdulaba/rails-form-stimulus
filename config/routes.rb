@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :products do
-    resources :booking, shallow: :true
+  resources :products, shallow: true do
+    resources :bookings
   end
 end
